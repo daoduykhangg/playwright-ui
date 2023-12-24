@@ -21,7 +21,8 @@ page.getByTestId() to locate an element based on its data-testid attribute (othe
   await page.getByRole('button', { type: 'submit' }).click();
 
   //page.getByText() to locate by text content.
-  const NameElement = await page.locator("//p[@class='oxd-userdropdown-name']").textContent();
+  const NameElement = await page.locator("//p[@class='oxd-userdropdown-name']").textContent() as string;
+  
   await expect(page.getByText(NameElement)).toBeVisible();
 
   //page.getByLabel() to locate a form control by associated label's text.
